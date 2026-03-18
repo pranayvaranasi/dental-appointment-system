@@ -4,11 +4,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-BASE_DIR = Path(__file__).resolve().parent.parent.parent  # project root
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 CSV_PATH = str(BASE_DIR / "doctor_availability.csv")
 
-XAI_API_KEY = "API KEY"
-MODEL_NAME = os.getenv("MODEL_NAME", "grok-4")
+# ✅ OpenRouter config
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+MODEL_NAME = os.getenv("MODEL_NAME", "openai/gpt-4o-mini")
 TEMPERATURE = float(os.getenv("TEMPERATURE", "0"))
 
 VALID_SPECIALIZATIONS = [
